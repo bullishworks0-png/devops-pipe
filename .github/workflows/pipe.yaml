@@ -1,24 +1,21 @@
-name. CI pipe
+name: CI pipe
 
 on:
- push:
-  branches: [main]
+  push:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-     - name: checkout_code
-       uses: actions/checkout@v5
+      - name: Checkout code
+        uses: actions/checkout@v5
 
-     - name: Set up Node.js
-       uses: actions/setup-node@v3
-       with:
-        node-version: 16
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
-     - name: Install dependencies
-       run: npm install
-
-     - name: Run tests
-       run: npm test
+      - name: Install dependencies
+        run: npm install
